@@ -1,0 +1,520 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure html and body take full height */
+  overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+}
+
+body {
+  font-family: 'Inter', sans-serif; /* Changed font to Inter for better visibility */
+  background:radial-gradient(circle at center, rgb(96, 88, 229), rgb(153, 82, 203));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+.app-container {
+  width: 65vw; /* Increased width for a more horizontal look */
+  max-width: 850px; /* Increased max-width to give more space to heading */
+  margin: 25px auto; /* Adjusted margin to center better and reduce vertical space */
+  padding: 25px; /* Reduced padding for a more compact look */
+  background: rgba(255, 255, 255, 0.95); /* Increased opacity for better visibility */
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Slightly softer shadow */
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh; /* Adjusted min-height for more compact view */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+
+h1 {
+  color: rgb(47, 41, 174);
+  font-size: 1.5rem; /* Further reduced font size for main heading to fit */
+  margin-bottom: 20px; /* Adjusted margin */
+  white-space: nowrap; /* Prevent text from wrapping if possible */
+  overflow: hidden; /* Hide overflow if it still happens */
+  text-overflow: ellipsis; /* Add ellipsis if text is cut */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Adjusted margin */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 7px; /* Reduced padding */
+  flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+  gap: 4px; /* Reduced gap */
+}
+
+.nav-item {
+  padding: 7px 14px; /* Adjusted padding */
+  font-size: 0.9rem; /* Adjusted font size */
+  font-weight: 600;
+  color: rgb(47, 41, 174);
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 4px; /* Adjusted margin */
+  flex-grow: 1; /* Allow items to grow and fill space */
+  min-width: fit-content; /* Prevent shrinking too much */
+}
+
+.nav-item:hover {
+  background-color: rgb(220, 220, 255);
+}
+
+.nav-item.active {
+  background-color: rgb(47, 41, 174);
+  color: white;
+  box-shadow: 0 4px 10px rgba(47, 41, 174, 0.3);
+}
+
+/* General Content Section Styles (for HomePage, About, PDF, Video sections) */
+.content-section {
+  margin-bottom: 25px; /* Adjusted margin */
+  padding: 15px; /* Reduced padding */
+  border: 1px dashed rgb(131, 147, 225);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1; /* Allow content sections to take available space */
+}
+
+/* Home Page Specific Styles */
+.home-content {
+  margin-bottom: 25px; /* Adjusted margin */
+  padding: 15px; /* Adjusted padding */
+  border: 1px dashed rgb(131, 147, 225);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  color: rgb(31, 41, 55); /* Ensure text is visible */
+}
+
+.home-title {
+  color: rgb(47, 41, 174);
+  font-size: 1.3rem; /* Further reduced font size */
+  margin-bottom: 10px; /* Adjusted margin */
+}
+
+.home-description {
+  color: rgb(55, 65, 81);
+  font-size: 0.9rem; /* Further reduced font size */
+  line-height: 1.4; /* Adjusted line height */
+  max-width: 450px; /* Reduced max-width */
+  margin-bottom: 15px; /* Adjusted margin */
+}
+
+.features-list {
+  text-align: left;
+  margin-bottom: 12px; /* Adjusted margin */
+  width: 100%;
+  max-width: 300px; /* Reduced max-width */
+}
+
+.features-list h3 {
+  color: rgb(47, 41, 174);
+  margin-bottom: 7px; /* Adjusted margin */
+  font-size: 1rem; /* Further reduced font size */
+}
+
+.features-list ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.features-list ul li {
+  background-color: rgba(47, 41, 174, 0.1);
+  margin-bottom: 5px; /* Adjusted margin */
+  padding: 6px 9px; /* Adjusted padding */
+  border-radius: 5px;
+  color: rgb(31, 41, 55);
+  font-size: 0.85rem; /* Further reduced font size */
+  display: flex;
+  align-items: center;
+  gap: 7px; /* Adjusted gap */
+}
+
+.features-list ul li::before {
+  content: '✔️'; /* Custom bullet point */
+  color: rgb(47, 41, 174);
+  font-size: 0.9rem; /* Further reduced font size */
+}
+
+.call-to-action {
+  color: rgb(47, 41, 174);
+  font-weight: 600;
+  font-size: 0.95rem; /* Further reduced font size */
+  margin-top: 12px; /* Adjusted margin */
+}
+
+/* About Section Specific Styles */
+.about-section {
+  margin-bottom: 25px; /* Adjusted margin */
+  padding: 15px; /* Adjusted padding */
+  border: 1px dashed rgb(131, 147, 225);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  color: rgb(31, 41, 55); /* Ensure text is visible */
+}
+
+.about-title {
+  color: rgb(47, 41, 174);
+  margin-bottom: 12px;
+  font-size: 1.3rem; /* Further reduced font size */
+}
+
+.about-description {
+  color: rgb(55, 65, 81);
+  font-size: 0.9rem; /* Further reduced font size */
+  line-height: 1.4; /* Adjusted line height */
+  max-width: 450px; /* Reduced max-width */
+  margin-bottom: 12px; /* Adjusted margin */
+}
+
+.about-contact {
+  color: rgb(47, 41, 174);
+  font-weight: 500;
+  font-size: 0.85rem; /* Further reduced font size */
+}
+
+
+/* PDF Uploader Section */
+.pdf-section h2 {
+  color: rgb(47, 41, 174);
+  margin-bottom: 12px; /* Adjusted margin */
+}
+
+/* PdfUploader component specific styles */
+.pdf-uploader-container {
+  display: flex; /* Changed to flex */
+  flex-direction: row; /* Changed to row for horizontal layout */
+  align-items: center; /* Vertically align items in the center */
+  justify-content: center; /* Horizontally center items */
+  gap: 10px; /* Reduced gap */
+  width: 100%;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.pdf-uploader-container .file-input {
+  padding: 7px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 80%;
+  max-width: 220px; /* Reduced max-width */
+  font-size: 13px; /* Reduced font size */
+  color: rgb(31, 41, 55); /* Ensure text is visible */
+}
+
+.pdf-uploader-container .upload-button {
+  padding: 7px 15px; /* Adjusted padding */
+  background-color: rgb(47, 41, 174);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.pdf-uploader-container .upload-button:hover {
+  background-color: rgb(30, 25, 120);
+  transform: scale(1.03);
+}
+
+.upload-message {
+  margin-top: 7px; /* Reduced margin */
+  font-weight: 500;
+  font-size: 0.8rem; /* Reduced font size */
+  color: rgb(31, 41, 55); /* Ensure text is visible */
+  width: 100%; /* Take full width for message below inputs */
+  text-align: center;
+}
+
+.upload-message.success {
+  color: green;
+}
+
+.upload-message.error {
+  color: red;
+}
+
+/* Video Analysis Section (replaces YouTube) */
+.video-section h2 {
+  color: rgb(47, 41, 174);
+  margin-bottom: 12px; /* Adjusted margin */
+}
+
+.video-url-input {
+  width: calc(100% - 20px); /* Adjusted width */
+  padding: 9px 10px; /* Adjusted padding */
+  margin-bottom: 10px; /* Adjusted margin */
+  border: 2px solid rgb(47, 41, 174);
+  border-radius: 8px;
+  font-size: 13px; /* Reduced font size */
+  outline: none;
+  transition: 0.2s;
+  max-width: 300px; /* Reduced max-width */
+  color: rgb(31, 41, 55); /* Ensure text is visible */
+  background: #f9f9f9; /* Light background for better contrast */
+}
+
+.video-url-input:focus {
+  border-color: rgb(47, 41, 174);
+  box-shadow: 0 0 8px rgb(131, 147, 225);
+}
+
+.analyze-video-button {
+  padding: 7px 15px; /* Adjusted padding */
+  background-color: rgb(47, 41, 174);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.analyze-video-button:hover {
+  background-color: rgb(30, 25, 120);
+  transform: scale(1.03);
+}
+
+.video-message {
+  margin-top: 7px; /* Reduced margin */
+  font-weight: 500;
+  font-size: 0.8rem; /* Reduced font size */
+  color: rgb(1, 7, 16); /* Ensure text is visible */
+}
+
+.video-message.success {
+  color: green;
+}
+
+.video-message.uploading {
+  color: green;
+}
+
+.video-message.error {
+  color: red;
+}
+
+/* Prompt and Output Sections */
+.qa-section-wrapper { /* New wrapper div for prompt and output */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: auto; /* Pushes to bottom */
+}
+
+.prompt-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; /* Reduced gap */
+  margin-bottom: 18px; /* Adjusted margin */
+  flex-wrap: wrap;
+  width: 100%; /* Take full width of wrapper */
+}
+
+.prompt-section input {
+  flex: 1;
+  max-width: 250px; /* Reduced max-width */
+  padding: 9px 10px; /* Adjusted padding */
+  border: 2px solid rgb(47, 41, 174);
+  border-radius: 8px;
+  font-size: 13px; /* Reduced font size */
+  outline: none;
+  transition: 0.2s;
+  color: rgb(1, 0, 11); /* Brighter text for dark backgrounds */
+  background: #f5f5f5; /* Dark background for input in dark mode */
+}
+
+.prompt-section input:focus {
+  border-color: rgb(47, 41, 174);
+  box-shadow: 0 0 8px rgb(131, 147, 225);
+}
+
+.prompt-section button {
+  padding: 7px 15px; /* Adjusted padding */
+  background-color: rgb(47, 41, 174);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.prompt-section button:hover {
+  background-color: rgb(47, 41, 174);
+  transform: scale(1.03);
+}
+
+.output-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px; /* Adjusted margin */
+  width: 100%; /* Take full width of wrapper */
+}
+.output-section div{
+  width: 350px; /* Reduced width */
+  height: auto;
+  min-height: 40px; /* Reduced min-height */
+  overflow: hidden;
+}
+
+.output-section h3 {
+  color: rgb(17, 24, 39);
+  margin-bottom: 7px; /* Adjusted margin */
+}
+
+.output-box {
+  padding: 7px 0px 0px 7px; /* Adjusted padding */
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 5px solid rgb(47, 41, 174) ; /* Adjusted border size */
+  font-size: 14px; /* Reduced font size */
+  text-align: left;
+  color: rgb(31, 41, 55); /* Ensure text is visible */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05); /* Adjusted shadow */
+  transition: background 0.2s ease;
+  word-wrap: break-word;
+}
+
+.output-box:hover {
+  background: rgb(240, 240, 240);
+}
+.footer{
+  padding: 25px 0px 0px 0px; /* Adjusted padding */
+  color: rgb(60, 60, 60);
+  font-size: 0.75rem; /* Reduced font size */
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .app-container {
+    width: 90vw; /* Adjusted width for better fit on tablets */
+    padding: 20px; /* Adjusted padding */
+    margin: 10px auto; /* Adjusted margin for smaller screens */
+  }
+  h1 {
+    font-size: 1.6rem; /* Adjusted for smaller screens */
+  }
+  .navbar {
+    padding: 5px; /* Adjusted padding */
+    gap: 2px;
+  }
+  .nav-item {
+    padding: 7px 10px; /* Adjusted padding */
+    font-size: 0.85rem; /* Adjusted for smaller screens */
+    margin: 0 2px;
+  }
+  .home-title, .about-title, .pdf-section h2, .video-section h2 {
+    font-size: 1.2rem; /* Adjusted for smaller screens */
+  }
+  .home-description, .about-description {
+    font-size: 0.85rem; /* Adjusted for smaller screens */
+  }
+  .features-list {
+    max-width: 280px; /* Adjusted max-width */
+  }
+  .pdf-uploader-container {
+    flex-direction: column; /* Stack vertically on small screens */
+  }
+  .prompt-section input, .video-url-input {
+    max-width: 100%;
+  }
+  .output-section div, .output-box {
+    width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 590px) {
+  .app-container {
+    width: 98vw; /* Almost full width on very small screens */
+    padding: 10px; /* Further reduced padding */
+    margin: 5px auto; /* Further adjust margin for very small screens */
+    min-height: 80vh; /* Ensure it looks good on mobile */
+  }
+  .nav-item {
+    padding: 5px 7px; /* Further adjusted padding */
+    font-size: 0.75rem; /* Further adjusted font size */
+    margin: 0 1px;
+  }
+  h1 {
+    font-size: 1.2rem; /* Adjusted for very small screens */
+    margin-bottom: 10px; /* Adjusted margin */
+  }
+  .home-title, .about-title, .pdf-section h2, .video-section h2 {
+    font-size: 1rem; /* Adjusted for very small screens */
+  }
+  .prompt-section, .content-section { /* Apply to all content sections */
+    flex-direction: column;
+    gap: 6px; /* Reduced gap */
+  }
+  .prompt-section input, .video-url-input, .pdf-uploader-container .file-input {
+    width: calc(100% - 16px); /* Adjust for padding */
+    padding: 6px; /* Reduced padding */
+  }
+  .prompt-section button, .analyze-video-button, .pdf-uploader-container .upload-button {
+    padding: 6px 12px; /* Reduced padding */
+    width: auto;
+  }
+  .features-list {
+    max-width: 100%;
+    padding: 0 5px; /* Adjusted padding */
+  }
+  .output-box {
+    font-size: 12px; /* Smaller font on very small screens */
+  }
+  .footer {
+    padding: 15px 0px 0px 0px; /* Adjusted padding */
+    font-size: 0.7rem; /* Further reduced font size */
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-item {
+    font-size: 0.6rem;
+    padding: 4px 5px;
+  }
+  h1 {
+    font-size: 1rem;
+  }
+  .home-description, .about-description {
+    font-size: 0.8rem;
+  }
+  .features-list ul li {
+    font-size: 0.75rem;
+  }
+  .call-to-action {
+    font-size: 0.85rem;
+  }
+}
