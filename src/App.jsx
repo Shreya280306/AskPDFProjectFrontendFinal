@@ -161,7 +161,7 @@ function App() {
 
   return (
    <div className="app-container">
-         <h1>RAG-based PDF Q&A</h1>
+         <h1>RAG-based PDF and Youtube Q&A</h1>
 
       <nav className="navbar">
         <button
@@ -192,47 +192,9 @@ function App() {
 
       {renderPageContent()}
 
-      {/* {(currentPage === 'pdf' || currentPage === 'video') && (
-        <div className="qa-section-wrapper"> {}
-          <div className="prompt-section">
-            <input
-              type="text"
-              placeholder={`Ask a question about the ${currentPage === 'pdf' ? 'PDF' : 'video'}...`}
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
-            />
-            <button onClick={handleSubmit}>Ask</button>
-          </div>
-
-          <div className="output-section">
-            <h3>Output</h3>
-            <div className="output-box">{response || 'No response yet.'}</div>
-          </div>
-        </div>
-      )} */}
-      <footer className="footer">© 2025 RAG-based Q&A. All rights reserved.</footer>
+      <footer className="footer">© 2025 RAG-based Q&A</footer>
       </div>
-      //    {/* <div className="uploader-section"> 
-      //      <PdfUploader />
-      //    </div>
-   
-      //    <div className="prompt-section"> */}
-      //      {/* <input
-      //        type="text"
-      //        placeholder="Type your question..."
-      //        value={prompt}
-      //        onChange={(e) => setPrompt(e.target.value)}
-      //      /> 
-      //      <button onClick={handleSubmit}>Ask</button>
-      //      */}
-      //   // </div>
-   
-      //    {/* <div className="output-section">
-      //      <h3>Output</h3>
-      //      <div className="output-box">{response || 'No response yet.'}</div>
-      //    </div> */}
-      //    //<footer className="footer">© 2025 RAG PDF Q&A. All rights reserved.</footer>
-      // //  </div>
+    
   );
 }
 
